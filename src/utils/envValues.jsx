@@ -1,0 +1,7 @@
+const SERVICE_ID = process.env.REACT_APP_SERVICE_ID;
+
+const TEMPLATE_ID = process.env.REACT_APP_TEMPLATE_ID;
+
+const PUBLIC_ID = process.env.REACT_APP_PUBLIC_KEY;
+
+export { SERVICE_ID, TEMPLATE_ID, PUBLIC_ID };
