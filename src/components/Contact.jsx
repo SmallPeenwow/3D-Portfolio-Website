@@ -2,8 +2,6 @@ import React, { useRef, useState } from 'react';
 import styled from 'styled-components';
 import Map from './Map';
 import emailjs from '@emailjs/browser';
-window.process = {};
-// import { SERVICE_ID, TEMPLATE_ID, PUBLIC_ID } from '../utils/envValues';
 
 const Section = styled.div`
 	height: 100vh;
@@ -71,13 +69,12 @@ const Contact = () => {
 	const handleSubmit = (e) => {
 		e.preventDefault();
 
-		// emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, ref.current, PUBLIC_ID).then(
 		emailjs
 			.sendForm(
-				process.env.REACT_APP_SERVICE_ID,
-				process.env.REACT_APP_TEMPLATE_ID,
+				import.meta.env.VITE_APP_SERVICE_ID,
+				import.meta.env.VITE_APP_TEMPLATE_ID,
 				ref.current,
-				process.env.REACT_APP_PUBLIC_KEY
+				import.meta.env.VITE_APP_PUBLIC_KEY
 			)
 			.then(
 				(result) => {
